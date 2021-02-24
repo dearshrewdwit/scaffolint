@@ -5,12 +5,12 @@
 # /____/ \___/ \__,_//_/  /_/ 1 \____//_____//_//_/ /_/ \__/
 #
 # The linter file that doesn't lead junior developers to bad habits.
-# https://github.com/makersacademy/scaffolint
+# https://github.com/dearshrewdwit/scaffolint
 #
 # Problems (eg obselete names) may be due to an incompatible version.
 # Check your Rubocop version with `rubocop -v` in the command line.
 #
-# Tested with Rubocop version 0.79.0
+# Tested with Rubocop version 1.10.0
 #
 # Introduction
 # ============
@@ -53,6 +53,12 @@ Metrics/BlockLength:
     - 'spec/**/*'
     - 'test/**/*'
 
+# Keep up-to-date
+# ===============
+
+AllCops:
+  NewCops: enable
+
 # Code Style
 # ==========
 #
@@ -68,6 +74,8 @@ Metrics/BlockLength:
 #   * Easy wins in expressiveness (e.g. guard clauses — nice opportunity to
 #     inject concretes)
 #   * Egregious non-idiomatic ruby like `def getFilename`
+
+# NB: rubocop -a will autocorrect simple violations. See https://docs.rubocop.org/rubocop/usage/basic_usage.html for more options.
 
 Layout/IndentationConsistency:
   Enabled: true
@@ -201,8 +209,6 @@ Style/BlockComments:
   Enabled: false
 Style/BlockDelimiters:
   Enabled: false
-Style/BracesAroundHashParameters:
-  Enabled: false
 Style/CaseEquality:
   Enabled: false
 Layout/CaseIndentation:
@@ -291,6 +297,8 @@ Layout/FirstArgumentIndentation:
   Enabled: false
 Lint/FlipFlop:
   Enabled: false
+Lint/MissingSuper:
+  Enabled: false
 Style/For:
   Enabled: false
 Style/FormatString:
@@ -338,8 +346,6 @@ Style/MethodCallWithoutArgsParentheses:
 Style/MethodCalledOnDoEndBlock:
   Enabled: false
 Style/MethodDefParentheses:
-  Enabled: false
-Style/MethodMissingSuper:
   Enabled: false
 Style/MissingRespondToMissing:
   Enabled: false
@@ -451,7 +457,7 @@ Style/SymbolArray:
   Enabled: false
 Style/SymbolProc:
   Enabled: false
-Layout/Tab:
+Layout/IndentationStyle:
   Enabled: false
 Style/TernaryParentheses:
   Enabled: false
